@@ -5,6 +5,8 @@ VisualStudioVersion = 16.0.30523.141
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "NegativeEffect", "NegativeEffect\NegativeEffect.vcxproj", "{1F88919D-9499-4E8F-BB36-786D939ED7AB}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ConsoleTest", "ConsoleTest\ConsoleTest.vcxproj", "{8BACBFDA-F6CF-479D-BEBF-03397259DD21}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -21,6 +23,14 @@ Global
 		{1F88919D-9499-4E8F-BB36-786D939ED7AB}.Release|x64.Build.0 = Release|x64
 		{1F88919D-9499-4E8F-BB36-786D939ED7AB}.Release|x86.ActiveCfg = Release|Win32
 		{1F88919D-9499-4E8F-BB36-786D939ED7AB}.Release|x86.Build.0 = Release|Win32
+		{8BACBFDA-F6CF-479D-BEBF-03397259DD21}.Debug|x64.ActiveCfg = Debug|x64
+		{8BACBFDA-F6CF-479D-BEBF-03397259DD21}.Debug|x64.Build.0 = Debug|x64
+		{8BACBFDA-F6CF-479D-BEBF-03397259DD21}.Debug|x86.ActiveCfg = Debug|Win32
+		{8BACBFDA-F6CF-479D-BEBF-03397259DD21}.Debug|x86.Build.0 = Debug|Win32
+		{8BACBFDA-F6CF-479D-BEBF-03397259DD21}.Release|x64.ActiveCfg = Release|x64
+		{8BACBFDA-F6CF-479D-BEBF-03397259DD21}.Release|x64.Build.0 = Release|x64
+		{8BACBFDA-F6CF-479D-BEBF-03397259DD21}.Release|x86.ActiveCfg = Release|Win32
+		{8BACBFDA-F6CF-479D-BEBF-03397259DD21}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
