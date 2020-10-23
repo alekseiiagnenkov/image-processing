@@ -3,6 +3,7 @@
 #include <cstdint>
 #include <memory>
 
+    //rgb24 rgb24, bgr24, rgb32, rgba32, arbg32, yuv, nv12
 
 void modifyImage(const std::uint8_t const* inputImage, std::uint8_t* outputImage, std::uint32_t width, std::uint32_t height) {
 
