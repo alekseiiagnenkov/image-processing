@@ -5,12 +5,13 @@
 const char* msgs[] = { " [0] Create filter",
 					   " [1] Blur ",
 					   " [2] Copy ",
-					   " [3] Exit\n"
+					   " [3] Negative ",
+					   " [4] Exit\n"
 };
 
 const int NMsgs = sizeof(msgs) / sizeof(msgs[0]);
 
-Matrix* (*functions[])(int, int) = { CreatMatrix, Blur, Copy, Exit };
+Matrix* (*functions[])(int, int) = { CreatMatrix, Blur, Copy, Negative, Exit };
 
 Matrix* dialogChoose(int width, int height) {
 	int rc = dialog(msgs, NMsgs);
@@ -18,6 +19,14 @@ Matrix* dialogChoose(int width, int height) {
 }
 
 
+Matrix* Negative(int width, int heigth) {
+	Matrix* M = new Matrix[1];
+	M->height = 1;
+	M->width = 1;
+	M->arr = new double[]
+	{-1};
+	return M;
+}
 
 Matrix* Blur(int width, int heigth) {
 	Matrix* M = new Matrix[1];

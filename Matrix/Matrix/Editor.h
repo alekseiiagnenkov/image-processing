@@ -12,6 +12,7 @@ int modifyImage(const std::uint8_t const* inputImage, std::uint8_t* outputImage,
 Matrix* CreatMatrix(int width, int height);
 Matrix* Blur(int width, int heigth);
 Matrix* Copy(int width, int heigth);
+Matrix* Negative(int width, int heigth);
 Matrix* Exit(int a, int b);
 
 Matrix* (*functions[])(int, int);
