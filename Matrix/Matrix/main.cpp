@@ -11,13 +11,14 @@ int main(int argc, char** argv) {
 
 	cv::Mat img = cv::imread(argv[1]);
 	cv::imshow("Original image", img);
+	cv::waitKey(1);
 	cv::Mat modifiedImage(img.rows, img.cols, CV_8UC3);
 	do {
 		if (!modifyImage(img.data, modifiedImage.data, img.cols, img.rows))
 			break;
 		cv::imshow("Modified", modifiedImage);
-		std::cout << "Press any key.";
-		cv::waitKey();
+		std::cout << "Press any key."<< std::endl;
+		cv::waitKey(1);
 	} while (1);
 	return 0;
 }

@@ -7,6 +7,7 @@ struct Matrix {
 };
 
 int index(int x, int y, int width, int height, int* b);
+unsigned char clamp(double val);
 int modifyImage(const std::uint8_t const* inputImage, std::uint8_t* outputImage, std::uint32_t width, std::uint32_t height);
 
 Matrix* CreatMatrix(int width, int height);

@@ -28,6 +28,14 @@ Matrix* Negative(int width, int heigth) {
 	return M;
 }
 
+unsigned char clamp(double val) {
+	if (val < 0)
+		return 0;
+	if (val > 255)
+		return 255;
+	return (unsigned char)val;
+}
+
 Matrix* Blur(int width, int heigth) {
 	Matrix* M = new Matrix[1];
 	M->height = 3;
@@ -44,9 +52,7 @@ Matrix* Copy(int width, int heigth) {
 	M->height = 3;
 	M->width = 3;
 	M->arr = new double[]
-	{ 0, 0, 0,
-		0, 1, 0,
-		0, 0, 0 };
+	{ 1};
 	return M;
 }
 
@@ -85,17 +91,28 @@ int modifyImage(const std::uint8_t const* inputImage, std::uint8_t* outputImage,
 	Matrix* M;
 	if (M = dialogChoose(width, height)) {
 
-		for (int y = 0; y < height; y++)
-			for (int x = 0; x < width; x++) {
+		for (int y = (M->height / 2); y < height - (M->height / 2); y++)
+			for (int x = (M->width / 2); x < width - (M->width / 2); x++) {
 				int ind = index(x, y, width, height, &b);
 				for (int i = 0; i < 3; i++) {
 					int j = 0;
+					double r = 0;
 					outputImage[ind + i] = 0;
 					for (int m = y - (M->height / 2); m <= y + (M->height / 2); m++)
 						for (int n = x - (M->width / 2); n <= x + (M->width / 2); n++, j++)
-							outputImage[ind + i] += M->arr[j] * inputImage[index(n, m, width, height, &b) + i] * b;
+							r += M->arr[j] * inputImage[index(n, m, width, height, &b) + i] * b;
+					outputImage[ind + i] = clamp(r);
 				}
 			}
+
+		//for (int y = 0; y < M->height/2; y++)
+		//	for (int x = 0; x < 1; x++) {
+		//		int ind = index(x, y, width, height, &b);
+		//		for (int i = 0; i < 3; i++) {
+		//			outputImage[ind + i] = inputImage[ind + i];
+		//		}
+		//	}
+
 		delete[] M->arr;
 		delete[] M;
 		return 1;
@@ -107,10 +124,7 @@ int modifyImage(const std::uint8_t const* inputImage, std::uint8_t* outputImage,
 
 
 
-int index(int x, int y, int width, int height, int* b) {
-	*b = 1;
-	if (x < 0 || x > width || y < 0 || y > height)
-		*b = 0;
+int index(int x, int y, int width, int height) {
 	return ((x + y * width) * 3);
 }
 
