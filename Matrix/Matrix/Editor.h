@@ -1,22 +1,27 @@
 #include <opencv2/opencv.hpp>
 
 struct Matrix {
-	double* arr;
+	std::string name;
+	double* arr1;
+	double* arr2;
 	int width;
 	int height;
 };
 
-int index(int x, int y, int width, int height, int* b);
+int index(int x, int y, int width, int height);
 unsigned char clamp(double val);
-int modifyImage(const std::uint8_t const* inputImage, std::uint8_t* outputImage, std::uint32_t width, std::uint32_t height);
+Matrix* modifyImage(const std::uint8_t const* inputImage, std::uint8_t* outputImage, std::uint32_t width, std::uint32_t height, std::vector<Matrix*>&);
 
-Matrix* CreatMatrix(int width, int height);
-Matrix* Blur(int width, int heigth);
-Matrix* Copy(int width, int heigth);
-Matrix* Negative(int width, int heigth);
-Matrix* Exit(int a, int b);
+Matrix* CreatMatrix(std::vector<Matrix*>& ARR);
+Matrix* ChooseMatrix(std::vector<Matrix*>& ARR);
+Matrix* Exit(std::vector<Matrix*>& ARR);
+Matrix* (*functions[])(std::vector<Matrix*>& ARR);
+Matrix* dialogChoose(std::vector<Matrix*>& ARR);
 
-Matrix* (*functions[])(int, int);
-Matrix* dialogChoose(int, int);
+
+Matrix* copyEdges(const std::uint8_t const* inputImage, std::uint8_t* outputImage, std::uint32_t width, std::uint32_t height, Matrix* M);
 int dialog(const char* msgs[], int N);
 int getNaturalInt(int* a);
+void SAVE(std::vector<Matrix*>& ARR);
+std::vector<Matrix*> LOAD(std::vector<Matrix*>&);
+std::vector<Matrix*> addMatrix(std::vector<Matrix*>& ARR, Matrix* M);

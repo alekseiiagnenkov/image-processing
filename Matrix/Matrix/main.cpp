@@ -1,6 +1,7 @@
 #include <opencv2/opencv.hpp>
 #include <iostream>
 #include "Editor.h"
+#include "fstream"
 
 int main(int argc, char** argv) {
 
@@ -13,12 +14,32 @@ int main(int argc, char** argv) {
 	cv::imshow("Original image", img);
 	cv::waitKey(1);
 	cv::Mat modifiedImage(img.rows, img.cols, CV_8UC3);
+
+	std::vector<Matrix*> ARR;
+	ARR = LOAD(ARR);
+	Matrix* M; 
+
 	do {
-		if (!modifyImage(img.data, modifiedImage.data, img.cols, img.rows))
+		if (!(M = modifyImage(img.data, modifiedImage.data, img.cols, img.rows, ARR)))
 			break;
 		cv::imshow("Modified", modifiedImage);
-		std::cout << "Press any key."<< std::endl;
 		cv::waitKey(1);
+
+
+		int i = 0;
+		for (i = 0; i < ARR.size(); i++) {
+			if (ARR[i]->name == M->name) {
+				i = -1;
+				break;
+			}
+		}
+		if (i != -1)
+			ARR = addMatrix(ARR, M);
+
+
 	} while (1);
+
+	SAVE(ARR);
+
 	return 0;
 }
