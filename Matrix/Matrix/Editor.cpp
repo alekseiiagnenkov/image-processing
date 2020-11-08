@@ -20,8 +20,10 @@ Matrix* dialogChoose(std::vector<Matrix*>& ARR) {
 Matrix* ChooseMatrix(std::vector<Matrix*>& ARR) {
 	Matrix* M = nullptr;
 	int a = 0;
-	if (ARR.size() == 0)
+	if (ARR.size() == 0) {
+		std::cout << "No filters!";
 		return nullptr;
+	}
 	else {
 		for (int i = 0; i < ARR.size(); i++)
 			std::cout << "[" << i << "] - " << ARR[i]->name << std::endl;
@@ -209,8 +211,8 @@ std::vector<Matrix*> load(std::vector<Matrix*>& ARR) {
 				break;
 			data >> M->height >> M->width;
 
-			M->arr1 = new double(M->height);
-			M->arr2 = new double(M->width);
+			M->arr1 = new double[M->height];
+			M->arr2 = new double[M->width];
 			for (int i = 0; i < M->height; i++) {
 				data >> M->arr1[i];
 			}
@@ -230,7 +232,7 @@ void save(std::vector<Matrix*>& ARR) {
 	if (data.is_open()) {
 		data.seekp(0, std::ios::beg);
 		for (int j = 0; j < ARR.size(); j++) {
-			data << ARR[j]->name << " " << ARR[j]->height << " " << ARR[j]->width << std::endl;
+			data << ARR[j]->name << " " << ARR[j]->height << " " << ARR[j]->width << " " << std::endl;
 			for (int i = 0; i < ARR[j]->height; i++)
 				data << ARR[j]->arr1[i] << " ";
 			data << std::endl;
