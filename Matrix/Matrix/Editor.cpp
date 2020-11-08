@@ -20,8 +20,10 @@ Matrix* dialogChoose(std::vector<Matrix*>& ARR) {
 Matrix* ChooseMatrix(std::vector<Matrix*>& ARR) {
 	Matrix* M = nullptr;
 	int a = 0;
-	if (ARR.size() == 0)
+	if (ARR.size() == 0) {
+		std::cout << "No filters!";
 		return nullptr;
+	}
 	else {
 		for (int i = 0; i < ARR.size(); i++)
 			std::cout << "[" << i << "] - " << ARR[i]->name << std::endl;
@@ -195,7 +197,7 @@ unsigned char clamp(double val) {
 	return (unsigned char)val;
 }
 
-std::vector<Matrix*> LOAD(std::vector<Matrix*>& ARR) {
+std::vector<Matrix*> load(std::vector<Matrix*>& ARR) {
 
 	std::ifstream data;
 	data.open("data.txt", std::ifstream::in);
@@ -209,8 +211,8 @@ std::vector<Matrix*> LOAD(std::vector<Matrix*>& ARR) {
 				break;
 			data >> M->height >> M->width;
 
-			M->arr1 = new double(M->height);
-			M->arr2 = new double(M->width);
+			M->arr1 = new double[M->height];
+			M->arr2 = new double[M->width];
 			for (int i = 0; i < M->height; i++) {
 				data >> M->arr1[i];
 			}
@@ -224,13 +226,13 @@ std::vector<Matrix*> LOAD(std::vector<Matrix*>& ARR) {
 	return ARR;
 }
 
-void SAVE(std::vector<Matrix*>& ARR) {
+void save(std::vector<Matrix*>& ARR) {
 	std::ofstream data;
 	data.open("data.txt", std::ios_base::out | std::ios_base::trunc);
 	if (data.is_open()) {
 		data.seekp(0, std::ios::beg);
 		for (int j = 0; j < ARR.size(); j++) {
-			data << ARR[j]->name << " " << ARR[j]->height << " " << ARR[j]->width << std::endl;
+			data << ARR[j]->name << " " << ARR[j]->height << " " << ARR[j]->width << " " << std::endl;
 			for (int i = 0; i < ARR[j]->height; i++)
 				data << ARR[j]->arr1[i] << " ";
 			data << std::endl;

@@ -1,7 +1,7 @@
 #include <opencv2/opencv.hpp>
 #include <iostream>
 #include "Editor.h"
-#include "fstream"
+#include <fstream>
 
 int main(int argc, char** argv) {
 
@@ -15,22 +15,22 @@ int main(int argc, char** argv) {
 	cv::waitKey(1);
 	cv::Mat modifiedImage(img.rows, img.cols, CV_8UC3);
 
-	std::vector<Matrix*> ARR;
-	ARR = LOAD(ARR);
+	std::vector<Matrix*> Arr;
+	Arr = load(Arr);
 	Matrix* M;
 
 	do {
-		if (!(M = modifyImage(img.data, modifiedImage.data, img.cols, img.rows, ARR)))
+		if (!(M = modifyImage(img.data, modifiedImage.data, img.cols, img.rows, Arr)))
 			break;
 		cv::imshow("Modified", modifiedImage);
 		cv::waitKey(1);
 
 		if (M->name.size() == 0) {
-				ARR = addMatrix(ARR, M);
+				Arr = addMatrix(Arr, M);
 		}
 	} while (1);
 
-	SAVE(ARR);
+	save(Arr);
 
 	//for (int i = 0; i < ARR.size(); i++) {
 	//	delete[] ARR[i]->arr1;
