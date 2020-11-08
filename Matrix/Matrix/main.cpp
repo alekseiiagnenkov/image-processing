@@ -15,7 +15,7 @@ int main(int argc, char** argv) {
 	cv::waitKey(1);
 	cv::Mat modifiedImage(img.rows, img.cols, CV_8UC3);
 
-	std::vector<Matrix*> Arr;
+	std::vector<Matrix> Arr;
 	Arr = load(Arr);
 	Matrix* M;
 
