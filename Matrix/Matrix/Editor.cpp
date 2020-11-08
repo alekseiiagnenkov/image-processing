@@ -195,7 +195,7 @@ unsigned char clamp(double val) {
 	return (unsigned char)val;
 }
 
-std::vector<Matrix*> LOAD(std::vector<Matrix*>& ARR) {
+std::vector<Matrix*> load(std::vector<Matrix*>& ARR) {
 
 	std::ifstream data;
 	data.open("data.txt", std::ifstream::in);
@@ -224,7 +224,7 @@ std::vector<Matrix*> LOAD(std::vector<Matrix*>& ARR) {
 	return ARR;
 }
 
-void SAVE(std::vector<Matrix*>& ARR) {
+void save(std::vector<Matrix*>& ARR) {
 	std::ofstream data;
 	data.open("data.txt", std::ios_base::out | std::ios_base::trunc);
 	if (data.is_open()) {
