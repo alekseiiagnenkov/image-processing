@@ -17,7 +17,7 @@ int main(int argc, char** argv) {
 
 	std::vector<Matrix*> ARR;
 	ARR = LOAD(ARR);
-	Matrix* M; 
+	Matrix* M;
 
 	do {
 		if (!(M = modifyImage(img.data, modifiedImage.data, img.cols, img.rows, ARR)))
@@ -25,21 +25,18 @@ int main(int argc, char** argv) {
 		cv::imshow("Modified", modifiedImage);
 		cv::waitKey(1);
 
-
-		int i = 0;
-		for (i = 0; i < ARR.size(); i++) {
-			if (ARR[i]->name == M->name) {
-				i = -1;
-				break;
-			}
+		if (M->name.size() == 0) {
+				ARR = addMatrix(ARR, M);
 		}
-		if (i != -1)
-			ARR = addMatrix(ARR, M);
-
-
 	} while (1);
 
 	SAVE(ARR);
+
+	//for (int i = 0; i < ARR.size(); i++) {
+	//	delete[] ARR[i]->arr1;
+	//	delete[] ARR[i]->arr2;
+	//	delete ARR[i];
+	//}
 
 	return 0;
 }

@@ -3,7 +3,7 @@
 #include <iostream>
 #include <fstream>
 
-const char* msgs[] = { " \n[0] Create filter",
+const char* msgs[] = { "\n [0] Create filter",
 					   " [1] Choose filter",
 					   " [2] Exit\n"
 };
@@ -92,21 +92,28 @@ Matrix* modifyImage(const std::uint8_t const* inputImage, std::uint8_t* outputIm
 }
 
 std::vector<Matrix*> addMatrix(std::vector<Matrix*>& ARR, Matrix* M) {
-	int a = 0;
+	int a = 0, i;
 	do {
 		std::cout << "Do you want to save this filter?\n [Yes]-1   [No]-0\n Your choise:";
 		std::cin >> a;
 	} while (a < 0 || a>1);
 	if (a) {
-		std::cout << "Enter name of filter:";
-		std::cin >> M->name;
-		for (int i = 0; i < ARR.size(); i++) {
-			if (ARR[i]->name == M->name) {
-				std::cout << "ERROR!  This filter already have created!\n";
-				return ARR;
+		do {
+			std::cout << "Enter name of filter:";
+			std::cin >> M->name;
+			for (i = 0; i < ARR.size(); i++) {
+				if (ARR[i]->name == M->name) {
+					std::cout << "ERROR!  This filter already have created!\n";
+					i=-1;
+				}
 			}
-		}
+		} while (i==-1);
 		ARR.push_back(M);
+	}
+	else {
+		delete[] M->arr1;
+		delete[] M->arr2;
+		delete M;
 	}
 	return ARR;
 }
@@ -197,9 +204,10 @@ std::vector<Matrix*> LOAD(std::vector<Matrix*>& ARR) {
 
 		while (!data.eof()) {
 			Matrix* M = new Matrix;
-			data >> M->name >> M->height >> M->width;
+			data >> M->name;
 			if ((M->name.size() == 0))
 				break;
+			data >> M->height >> M->width;
 
 			M->arr1 = new double(M->height);
 			M->arr2 = new double(M->width);
