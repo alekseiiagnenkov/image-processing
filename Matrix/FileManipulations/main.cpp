@@ -8,23 +8,23 @@
 
 int main(int argc, char** argv) {
 
-	//staticmat::Matrix statMat;
+	staticmat::Matrix statMat;
 
-	//std::cin >> statMat.name;
-	//std::cin >> statMat.vertSize;
-	//for(int i=0; i<statMat.vertSize; i++)
-	//	std::cin >> statMat.vertMatr[i];
-	//std::cin >> statMat.horSize;
-	//for (int i = 0; i < statMat.horSize; i++)
-	//	std::cin >> statMat.horMatr[i];
-	//std::ofstream outFile("out.bin", std::ios::binary);
-	//outFile.write((char*)&statMat, sizeof(statMat));
-	//outFile.close();
+	std::cin >> statMat.name;
+	std::cin >> statMat.vertSize;
+	for(int i=0; i<statMat.vertSize; i++)
+		std::cin >> statMat.vertMatr[i];
+	std::cin >> statMat.horSize;
+	for (int i = 0; i < statMat.horSize; i++)
+		std::cin >> statMat.horMatr[i];
+	std::ofstream outFile("out.bin", std::ios::binary);
+	outFile.write((char*)&statMat, sizeof(statMat));
+	outFile.close();
 
-	//staticmat::Matrix statMatNew;
-	//std::ifstream inFile("out.bin", std::ios::binary);
-	//inFile.read((char*)&statMatNew, sizeof(statMatNew));
-	//inFile.close();
+	staticmat::Matrix statMatNew;
+	std::ifstream inFile("out.bin", std::ios::binary);
+	inFile.read((char*)&statMatNew, sizeof(statMatNew));
+	inFile.close();
 
 	dynamicmat::Matrix dynMat;
 	std::string matrName;
