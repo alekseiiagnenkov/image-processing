@@ -19,7 +19,7 @@ Matrix Exit(std::vector<Matrix>& ARR);
 Matrix dialogChoose(std::vector<Matrix>& ARR);
 
 
-void copyEdges( std::uint8_t const* inputImage, std::uint8_t* outputImage, std::uint32_t width, std::uint32_t height, Matrix* M);
+void copyEdges( std::uint8_t const* inputImage, std::uint8_t* outputImage, std::uint32_t width, std::uint32_t height, Matrix M);
 int dialog(const char* msgs[], int N);
 int getNaturalInt(int* a);
 void save(std::vector<Matrix>& ARR);
