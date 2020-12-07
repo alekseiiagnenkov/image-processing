@@ -5,19 +5,19 @@
 
 const char *msgs[] = {"\n [0] Create filter",
                       " [1] Choose filter",
-                      " [2] Exit\n"
+                      " [2] exit\n"
 };
 
 const int NMsgs = sizeof(msgs) / sizeof(msgs[0]);
 
-Matrix (*functions[])(std::vector<Matrix> &) = {CreatMatrix, ChooseMatrix, Exit};
+Matrix (*functions[])(std::vector<Matrix> &) = {create_matrix, choose_matrix, exit};
 
-Matrix dialogChoose(std::vector<Matrix> &ARR) {
+Matrix dialog_choose(std::vector<Matrix> &ARR) {
     int rc = dialog(msgs, NMsgs);
     return functions[rc](ARR);
 }
 
-Matrix ChooseMatrix(std::vector<Matrix> &ARR) {
+Matrix choose_matrix(std::vector<Matrix> &ARR) {
     Matrix M;
     int a = 0;
     if (ARR.size() == 0) {
@@ -34,7 +34,7 @@ Matrix ChooseMatrix(std::vector<Matrix> &ARR) {
     }
 }
 
-Matrix CreatMatrix(std::vector<Matrix> &ARR) {
+Matrix create_matrix(std::vector<Matrix> &ARR) {
 
     double a;
     Matrix M;
@@ -62,15 +62,14 @@ Matrix CreatMatrix(std::vector<Matrix> &ARR) {
     return M;
 }
 
-Matrix Exit(std::vector<Matrix> &ARR) {
+Matrix exit(std::vector<Matrix> &ARR) {
     Matrix M;
     return M;
 }
 
-Matrix modifyImage(std::uint8_t const *inputImage, std::uint8_t *outputImage, std::uint32_t width, std::uint32_t height,
-                   std::vector<Matrix> &ARR) {
+Matrix modify_image(std::uint8_t const *inputImage, std::uint8_t *outputImage, std::uint32_t width, std::uint32_t height, std::vector<Matrix> &ARR) {
 
-    Matrix M = dialogChoose(ARR);
+    Matrix M = dialog_choose(ARR);
     if (!M.arr1.size() == 0) {
 
 
@@ -82,7 +81,7 @@ Matrix modifyImage(std::uint8_t const *inputImage, std::uint8_t *outputImage, st
                 for (int i = 0; i < 3; i++)
                     bigImage.data[ind + i] = inputImage[ind1 + i];
             }
-        copyEdges(inputImage, bigImage.data, width, height, M);
+        copy_edges(inputImage, bigImage.data, width, height, M);
 
 
         for (int y = (M.height / 2); y < height + (M.height / 2); y++)
@@ -103,7 +102,7 @@ Matrix modifyImage(std::uint8_t const *inputImage, std::uint8_t *outputImage, st
     return M;
 }
 
-std::vector<Matrix> addMatrix(std::vector<Matrix> &ARR, Matrix M) {
+std::vector<Matrix> add_matrix(std::vector<Matrix> &ARR, Matrix M) {
     int a, i;
     do {
         std::cout << "Do you want to save this filter?\n [Yes]-1   [No]-0\n Your choise:";
@@ -124,14 +123,14 @@ std::vector<Matrix> addMatrix(std::vector<Matrix> &ARR, Matrix M) {
     return ARR;
 }
 
-void copyEdges(std::uint8_t const *inputImage, std::uint8_t *bigImage, std::uint32_t width, std::uint32_t height, Matrix M) {
+void copy_edges(std::uint8_t const *inputImage, std::uint8_t *outputImage, std::uint32_t width, std::uint32_t height, Matrix M) {
 
     for (int x = M.width / 2; x < width + (M.width / 2); x++) {
         int ind1 = index(x - (M.width / 2), 0, width);
         for (int y = 0; y < (M.height / 2); y++) {
             int ind = index(x, y, width + 2 * (M.width / 2));
             for (int i = 0; i < 3; i++)
-                bigImage[ind + i] = inputImage[ind1 + i];
+                outputImage[ind + i] = inputImage[ind1 + i];
         }
     }
 
@@ -140,7 +139,7 @@ void copyEdges(std::uint8_t const *inputImage, std::uint8_t *bigImage, std::uint
         for (int y = height + M.height / 2; y < height + 2 * (M.height / 2); y++) {
             int ind = index(x, y, width + 2 * (M.width / 2));
             for (int i = 0; i < 3; i++)
-                bigImage[ind + i] = inputImage[ind1 + i];
+                outputImage[ind + i] = inputImage[ind1 + i];
         }
     }
 
@@ -149,7 +148,7 @@ void copyEdges(std::uint8_t const *inputImage, std::uint8_t *bigImage, std::uint
         for (int x = 0; x < M.width / 2; x++) {
             int ind = index(x, y, width + 2 * (M.width / 2));
             for (int i = 0; i < 3; i++)
-                bigImage[ind + i] = bigImage[ind1 + i];
+                outputImage[ind + i] = outputImage[ind1 + i];
         }
     }
 
@@ -158,7 +157,7 @@ void copyEdges(std::uint8_t const *inputImage, std::uint8_t *bigImage, std::uint
         for (int x = width + M.width / 2; x < width + 2 * (M.width / 2); x++) {
             int ind = index(x, y, width + 2 * (M.width / 2));
             for (int i = 0; i < 3; i++)
-                bigImage[ind + i] = bigImage[ind1 + i];
+                outputImage[ind + i] = outputImage[ind1 + i];
         }
     }
 }
@@ -167,22 +166,22 @@ int index(int x, int y, int width) {
     return ((x + y * width) * 3);
 }
 
-int dialog(const char *msgs[], int N) {
+int dialog(const char *msgs[], int n) {
     std::string errmsg;
     int rc;
     do {
         std::cout << errmsg;
         errmsg = "You are wrong. Repeat, please\n";
-        for (int j = 0; j < N; ++j)
+        for (int j = 0; j < n; ++j)
             puts(msgs[j]);
         std::cout << "Make your choice:";
 
-        if (getNaturalInt(&rc) == 0) { rc = 0; }
-    } while (rc < 0 || rc >= N);
+        if (get_natural_int(&rc) == 0) { rc = 0; }
+    } while (rc < 0 || rc >= n);
     return rc;
 }
 
-int getNaturalInt(int *a) {
+int get_natural_int(int *a) {
     do {
         std::cin >> *a;
         if (*a < 0)
@@ -208,7 +207,7 @@ std::vector<Matrix> load(std::vector<Matrix> &ARR) {
 
     int i, j;
     std::ifstream data;
-    data.open("data.txt", std::ifstream::in);
+    data.open("../res/data.txt", std::ifstream::in);
     if (data.is_open()) {
         data.seekg(0, std::ios::beg);
 
@@ -236,7 +235,7 @@ std::vector<Matrix> load(std::vector<Matrix> &ARR) {
 
 void save(std::vector<Matrix> &ARR) {
     std::ofstream data;
-    data.open("data.txt", std::ios_base::out | std::ios_base::trunc);
+    data.open("../res/data.txt", std::ios_base::out | std::ios_base::trunc);
     if (data.is_open()) {
         for (int j = 0; j < ARR.size(); j++) {
             data << ARR[j].name << " " << ARR[j].height << " " << ARR[j].width << " " << std::endl;

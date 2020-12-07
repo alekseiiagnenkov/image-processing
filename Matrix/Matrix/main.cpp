@@ -18,7 +18,7 @@ int main(int argc, char** argv) {
 	Arr = load(Arr);
 
     do {
-	Matrix M= modifyImage(img.data, modifiedImage.data, img.cols, img.rows, Arr);
+	Matrix M= modify_image(img.data, modifiedImage.data, img.cols, img.rows, Arr);
 
 		if (M.arr1.size()==0)
 			break;
@@ -26,7 +26,7 @@ int main(int argc, char** argv) {
 		cv::waitKey(0);
 
 		if (M.name.size() == 0) {
-				Arr = addMatrix(Arr, M);
+				Arr = add_matrix(Arr, M);
 		}
 	} while (1);
 
