@@ -86,12 +86,6 @@
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="/home/alekseiiagnenkov/CLionProjects/NegativeEffect/FindObjects/Finder.cpp">
-			<Option target="FindObjects"/>
-		</Unit>
-		<Unit filename="/home/alekseiiagnenkov/CLionProjects/NegativeEffect/FindObjects/Finder.h">
-			<Option target="FindObjects"/>
-		</Unit>
 		<Unit filename="/home/alekseiiagnenkov/CLionProjects/NegativeEffect/FindObjects/main.cpp">
 			<Option target="FindObjects"/>
 		</Unit>

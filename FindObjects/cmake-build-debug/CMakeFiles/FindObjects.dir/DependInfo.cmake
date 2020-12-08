@@ -4,7 +4,6 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/alekseiiagnenkov/CLionProjects/NegativeEffect/FindObjects/Finder.cpp" "/home/alekseiiagnenkov/CLionProjects/NegativeEffect/FindObjects/cmake-build-debug/CMakeFiles/FindObjects.dir/Finder.cpp.o"
   "/home/alekseiiagnenkov/CLionProjects/NegativeEffect/FindObjects/main.cpp" "/home/alekseiiagnenkov/CLionProjects/NegativeEffect/FindObjects/cmake-build-debug/CMakeFiles/FindObjects.dir/main.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")

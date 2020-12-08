@@ -1,5 +1,4 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/FindObjects.dir/Finder.cpp.o"
   "CMakeFiles/FindObjects.dir/main.cpp.o"
   "FindObjects"
   "FindObjects.pdb"

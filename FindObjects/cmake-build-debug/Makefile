@@ -143,33 +143,6 @@ FindObjects/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/FindObjects.dir/build.make CMakeFiles/FindObjects.dir/build
 .PHONY : FindObjects/fast
 
-Finder.o: Finder.cpp.o
-
-.PHONY : Finder.o
-
-# target to build an object file
-Finder.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/FindObjects.dir/build.make CMakeFiles/FindObjects.dir/Finder.cpp.o
-.PHONY : Finder.cpp.o
-
-Finder.i: Finder.cpp.i
-
-.PHONY : Finder.i
-
-# target to preprocess a source file
-Finder.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/FindObjects.dir/build.make CMakeFiles/FindObjects.dir/Finder.cpp.i
-.PHONY : Finder.cpp.i
-
-Finder.s: Finder.cpp.s
-
-.PHONY : Finder.s
-
-# target to generate assembly for a file
-Finder.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/FindObjects.dir/build.make CMakeFiles/FindObjects.dir/Finder.cpp.s
-.PHONY : Finder.cpp.s
-
 main.o: main.cpp.o
 
 .PHONY : main.o
@@ -206,9 +179,6 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... FindObjects"
-	@echo "... Finder.o"
-	@echo "... Finder.i"
-	@echo "... Finder.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
