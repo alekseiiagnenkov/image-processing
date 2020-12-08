@@ -48,13 +48,8 @@ int main(int argc, char **argv) {
                 if (x2_flag < x)
                     x2_flag = x;
             }
-
         }
 
-//    std::cout << "x1 = " << x1_flag << std::endl;
-//    std::cout << "x2 = " << x2_flag << std::endl;
-//    std::cout << "y1 = " << y1_flag << std::endl;
-//    std::cout << "y2 = " << y2_flag << std::endl;
     std::cout << "(x;y) = (" << y1_flag << ";" << x1_flag << ")" << std::endl;
     std::cout << "width = " << x2_flag - x1_flag << std::endl;
     std::cout << "height = " << y2_flag - y1_flag << std::endl;
