@@ -1,0 +1,3 @@
+/home/alekseiiagnenkov/CLionProjects/NegativeEffect/FindObjects/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/home/alekseiiagnenkov/CLionProjects/NegativeEffect/FindObjects/cmake-build-debug/CMakeFiles/edit_cache.dir
+/home/alekseiiagnenkov/CLionProjects/NegativeEffect/FindObjects/cmake-build-debug/CMakeFiles/FindObjects.dir
