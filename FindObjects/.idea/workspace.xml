@@ -11,9 +11,8 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ae750d73-9176-4618-9668-23692bf5a02f" name="Default Changelist" comment="Поиск области с определенного цвета">
+    <list default="true" id="ae750d73-9176-4618-9668-23692bf5a02f" name="Default Changelist" comment="Увеличил рандом">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/main.cpp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -65,7 +64,7 @@
       <workItem from="1607383412061" duration="1604000" />
       <workItem from="1607416183049" duration="6365000" />
       <workItem from="1607437918116" duration="907000" />
-      <workItem from="1607441158855" duration="2459000" />
+      <workItem from="1607441158855" duration="2789000" />
     </task>
     <task id="LOCAL-00001" summary="Поиск области с определенного цвета">
       <created>1607421386162</created>
@@ -74,7 +73,14 @@
       <option name="project" value="LOCAL" />
       <updated>1607421386162</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Увеличил рандом">
+      <created>1607445694047</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1607445694047</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -82,6 +88,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Поиск области с определенного цвета" />
-    <option name="LAST_COMMIT_MESSAGE" value="Поиск области с определенного цвета" />
+    <MESSAGE value="Увеличил рандом" />
+    <option name="LAST_COMMIT_MESSAGE" value="Увеличил рандом" />
   </component>
 </project>
