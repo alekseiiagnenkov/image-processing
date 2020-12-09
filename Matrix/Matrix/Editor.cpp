@@ -67,7 +67,9 @@ Matrix exit(std::vector<Matrix> &ARR) {
     return M;
 }
 
-Matrix modify_image(std::uint8_t const *inputImage, std::uint8_t *outputImage, std::uint32_t width, std::uint32_t height, std::vector<Matrix> &ARR) {
+Matrix
+modify_image(std::uint8_t const *inputImage, std::uint8_t *outputImage, std::uint32_t width, std::uint32_t height,
+             std::vector<Matrix> &ARR) {
 
     Matrix M = dialog_choose(ARR);
     if (!M.arr1.size() == 0) {
@@ -75,12 +77,12 @@ Matrix modify_image(std::uint8_t const *inputImage, std::uint8_t *outputImage, s
 
         cv::Mat bigImage(height + 2 * (M.height / 2), width + 2 * (M.width / 2), CV_8UC3);
         for (int y = (M.height / 2); y < height + (M.height / 2); y++)
-            for (int x = (M.width / 2); x < width + (M.width / 2); x++) {
-                int ind = index(x, y, width + 2 * (M.width / 2));
-                int ind1 = index(x - (M.width / 2), y - (M.height / 2), width);
-                for (int i = 0; i < 3; i++)
-                    bigImage.data[ind + i] = inputImage[ind1 + i];
-            }
+//            for (int x = (M.width / 2); x < width + (M.width / 2); x++) {
+//                int ind = index(x, y, width + 2 * (M.width / 2));
+//                int ind1 = index(x - (M.width / 2), y - (M.height / 2), width);
+//                for (int i = 0; i < 3; i++)
+//                    bigImage.data[ind + i] = inputImage[ind1 + i];
+//            }
         copy_edges(inputImage, bigImage.data, width, height, M);
 
 
@@ -92,9 +94,11 @@ Matrix modify_image(std::uint8_t const *inputImage, std::uint8_t *outputImage, s
                     double r = 0;
                     outputImage[ind + i] = 0;
                     for (int n = x - (M.width / 2), j = 0; n <= x + (M.width / 2); n++, j++)
-                        r += M.arr1[j] * bigImage.data[index(n, y, width + 2 * (M.width / 2)) + i];
+                        if ((index(n, y, width + 2 * (M.width / 2)) + i) <= 3*((width + 2 * (M.width / 2)) * (height + 2 * (M.height / 2))))
+                            r += M.arr1[j] * bigImage.data[index(n, y, width + 2 * (M.width / 2)) + i];
                     for (int m = y - (M.height / 2), j = 0; m <= y + (M.height / 2); m++, j++)
-                        r += M.arr2[j] * bigImage.data[index(x, m, width + 2 * (M.width / 2)) + i];
+                        if ((index(x, m, width + 2 * (M.width / 2)) + i) <= 3*((width + 2 * (M.width / 2)) * (height + 2 * (M.height / 2))))
+                            r += M.arr2[j] * bigImage.data[index(x, m, width + 2 * (M.width / 2)) + i];
                     outputImage[ind + i] = clamp(r / 2);
                 }
             }
@@ -123,7 +127,8 @@ std::vector<Matrix> add_matrix(std::vector<Matrix> &ARR, Matrix M) {
     return ARR;
 }
 
-void copy_edges(std::uint8_t const *inputImage, std::uint8_t *outputImage, std::uint32_t width, std::uint32_t height, Matrix M) {
+void copy_edges(std::uint8_t const *inputImage, std::uint8_t *outputImage, std::uint32_t width, std::uint32_t height,
+                Matrix M) {
 
     for (int x = M.width / 2; x < width + (M.width / 2); x++) {
         int ind1 = index(x - (M.width / 2), 0, width);
@@ -143,21 +148,21 @@ void copy_edges(std::uint8_t const *inputImage, std::uint8_t *outputImage, std::
         }
     }
 
-    for (int y = 0; y < height + 2 * (M.height / 2); y++) {
-        int ind1 = index(M.width / 2, y, width + 2 * (M.width / 2));
-        for (int x = 0; x < M.width / 2; x++) {
-            int ind = index(x, y, width + 2 * (M.width / 2));
+    for (int y = M.height / 2; y < height + (M.height / 2); y++) {
+        int ind1 = index(0, y - (M.height / 2), width);
+        for (int x = 0; x < (M.width / 2); x++) {
+            int ind = index(x, y, width + 2 * (M.height / 2));
             for (int i = 0; i < 3; i++)
-                outputImage[ind + i] = outputImage[ind1 + i];
+                outputImage[ind + i] = inputImage[ind1 + i];
         }
     }
 
-    for (int y = 0; y < height + 2 * (M.height / 2); y++) {
-        int ind1 = index(width - 1, y, width + 2 * (M.width / 2));
+    for (int y = M.height / 2; y < height + M.height / 2; y++) {
+        int ind1 = index(width - 1, y - (M.height / 2), width);
         for (int x = width + M.width / 2; x < width + 2 * (M.width / 2); x++) {
             int ind = index(x, y, width + 2 * (M.width / 2));
             for (int i = 0; i < 3; i++)
-                outputImage[ind + i] = outputImage[ind1 + i];
+                outputImage[ind + i] = inputImage[ind1 + i];
         }
     }
 }

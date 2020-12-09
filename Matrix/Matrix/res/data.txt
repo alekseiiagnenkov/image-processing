@@ -7,3 +7,6 @@ Selection_lines_| 5 5
 Sharpness 5 5 
 -1 -1 5 -1 -1 
 -1 -1 5 -1 -1 
+TestEdges 7 7 
+1 1 1 -6 1 1 1 
+1 1 1 -6 1 1 1 
