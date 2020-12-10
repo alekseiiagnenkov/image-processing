@@ -13,6 +13,14 @@
   <component name="ChangeListManager">
     <list default="true" id="ae750d73-9176-4618-9668-23692bf5a02f" name="Default Changelist" comment="Увеличил рандом">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/main.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Matrix/Matrix/Editor.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../Matrix/Matrix/Editor.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Matrix/Matrix/cmake-build-debug/CMakeFiles/Matrix.dir/CXX.includecache" beforeDir="false" afterPath="$PROJECT_DIR$/../Matrix/Matrix/cmake-build-debug/CMakeFiles/Matrix.dir/CXX.includecache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Matrix/Matrix/cmake-build-debug/CMakeFiles/Matrix.dir/Editor.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/../Matrix/Matrix/cmake-build-debug/CMakeFiles/Matrix.dir/Editor.cpp.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Matrix/Matrix/cmake-build-debug/CMakeFiles/Matrix.dir/main.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/../Matrix/Matrix/cmake-build-debug/CMakeFiles/Matrix.dir/main.cpp.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Matrix/Matrix/cmake-build-debug/Matrix" beforeDir="false" afterPath="$PROJECT_DIR$/../Matrix/Matrix/cmake-build-debug/Matrix" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Matrix/Matrix/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../Matrix/Matrix/main.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Matrix/Matrix/res/data.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../Matrix/Matrix/res/data.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -41,14 +49,14 @@
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
   </component>
   <component name="RunManager">
-    <configuration name="FindObjects" type="CMakeRunConfiguration" factoryName="Application" PROGRAM_PARAMS="../../image/star.png" REDIRECT_INPUT="false" ELEVATE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="FindObjects" TARGET_NAME="FindObjects" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="FindObjects" RUN_TARGET_NAME="FindObjects">
+    <configuration name="FindObjects" type="CMakeRunConfiguration" factoryName="Application" PROGRAM_PARAMS="../../image/objects.png" REDIRECT_INPUT="false" ELEVATE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="FindObjects" TARGET_NAME="FindObjects" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="FindObjects" RUN_TARGET_NAME="FindObjects">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" PASS_PARENT_ENVS_2="true">
+    <configuration default="true" type="GradleAppRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" PASS_PARENT_ENVS_2="true">
       <method v="2">
-        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+        <option name="com.jetbrains.cidr.cpp.gradle.execution.GradleNativeBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
     </configuration>
   </component>
@@ -65,6 +73,7 @@
       <workItem from="1607416183049" duration="6365000" />
       <workItem from="1607437918116" duration="907000" />
       <workItem from="1607441158855" duration="2789000" />
+      <workItem from="1607593126165" duration="8974000" />
     </task>
     <task id="LOCAL-00001" summary="Поиск области с определенного цвета">
       <created>1607421386162</created>
