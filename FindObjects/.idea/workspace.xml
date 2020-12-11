@@ -13,7 +13,11 @@
   <component name="ChangeListManager">
     <list default="true" id="ae750d73-9176-4618-9668-23692bf5a02f" name="Default Changelist" comment="Увеличил рандом">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/main.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/FindObjects.dir/Finder.cpp.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/FindObjects.dir/depend.internal" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/FindObjects.dir/depend.internal" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/FindObjects.dir/depend.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/FindObjects.dir/depend.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/FindObjects.dir/main.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/FindObjects.dir/main.cpp.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/FindObjects" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/FindObjects" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Matrix/Matrix/Editor.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../Matrix/Matrix/Editor.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Matrix/Matrix/cmake-build-debug/CMakeFiles/Matrix.dir/CXX.includecache" beforeDir="false" afterPath="$PROJECT_DIR$/../Matrix/Matrix/cmake-build-debug/CMakeFiles/Matrix.dir/CXX.includecache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Matrix/Matrix/cmake-build-debug/CMakeFiles/Matrix.dir/Editor.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/../Matrix/Matrix/cmake-build-debug/CMakeFiles/Matrix.dir/Editor.cpp.o" afterDir="false" />
@@ -54,11 +58,6 @@
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="GradleAppRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" PASS_PARENT_ENVS_2="true">
-      <method v="2">
-        <option name="com.jetbrains.cidr.cpp.gradle.execution.GradleNativeBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
-      </method>
-    </configuration>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -73,7 +72,8 @@
       <workItem from="1607416183049" duration="6365000" />
       <workItem from="1607437918116" duration="907000" />
       <workItem from="1607441158855" duration="2789000" />
-      <workItem from="1607593126165" duration="8974000" />
+      <workItem from="1607593126165" duration="9036000" />
+      <workItem from="1607670507959" duration="569000" />
     </task>
     <task id="LOCAL-00001" summary="Поиск области с определенного цвета">
       <created>1607421386162</created>
@@ -89,7 +89,14 @@
       <option name="project" value="LOCAL" />
       <updated>1607445694047</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Улучшена функция поиска объектов">
+      <created>1607605182879</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1607605182879</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -98,6 +105,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Поиск области с определенного цвета" />
     <MESSAGE value="Увеличил рандом" />
-    <option name="LAST_COMMIT_MESSAGE" value="Увеличил рандом" />
+    <MESSAGE value="Улучшена функция поиска объектов" />
+    <option name="LAST_COMMIT_MESSAGE" value="Улучшена функция поиска объектов" />
   </component>
 </project>

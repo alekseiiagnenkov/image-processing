@@ -6,19 +6,17 @@
 
 #IncludeRegexTransform: 
 
-/home/alekseiiagnenkov/CLionProjects/NegativeEffect/Matrix/Matrix/Editor.cpp
-Editor.h
 /home/alekseiiagnenkov/CLionProjects/NegativeEffect/Matrix/Matrix/Editor.h
+opencv2/opencv.hpp
+-
+
+/home/alekseiiagnenkov/CLionProjects/NegativeEffect/Matrix/Matrix/main.cpp
 opencv2/opencv.hpp
 -
 iostream
 -
-fstream
--
-
+Editor.h
 /home/alekseiiagnenkov/CLionProjects/NegativeEffect/Matrix/Matrix/Editor.h
-opencv2/opencv.hpp
--
 
 /usr/local/include/opencv4/opencv2/calib3d.hpp
 opencv2/core.hpp

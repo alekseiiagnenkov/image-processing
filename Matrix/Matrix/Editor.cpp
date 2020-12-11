@@ -77,12 +77,12 @@ modify_image(std::uint8_t const *inputImage, std::uint8_t *outputImage, std::uin
 
         cv::Mat bigImage(height + 2 * (M.height / 2), width + 2 * (M.width / 2), CV_8UC3);
         for (int y = (M.height / 2); y < height + (M.height / 2); y++)
-//            for (int x = (M.width / 2); x < width + (M.width / 2); x++) {
-//                int ind = index(x, y, width + 2 * (M.width / 2));
-//                int ind1 = index(x - (M.width / 2), y - (M.height / 2), width);
-//                for (int i = 0; i < 3; i++)
-//                    bigImage.data[ind + i] = inputImage[ind1 + i];
-//            }
+            for (int x = (M.width / 2); x < width + (M.width / 2); x++) {
+                int ind = index(x, y, width + 2 * (M.width / 2));
+                int ind1 = index(x - (M.width / 2), y - (M.height / 2), width);
+                for (int i = 0; i < 3; i++)
+                    bigImage.data[ind + i] = inputImage[ind1 + i];
+            }
         copy_edges(inputImage, bigImage.data, width, height, M);
 
 

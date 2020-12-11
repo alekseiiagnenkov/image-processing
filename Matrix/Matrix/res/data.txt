@@ -10,3 +10,6 @@ Sharpness 5 5
 TestEdges 7 7 
 1 1 1 -6 1 1 1 
 1 1 1 -6 1 1 1 
+ColorLines 7 7 
+1 1 1 -5 1 1 1 
+1 1 1 -5 1 1 1 
